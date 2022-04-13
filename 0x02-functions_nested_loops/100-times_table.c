@@ -1,11 +1,17 @@
 #include "holberton.h"
 /**
- * print_times_table - Entry point
- * @n: input
- * Return: Always 0 (Success)
+ * main - prints the string "Holberton" from a character array.
+ * Return: 0 on success.
  */
-void print_times_table(int n)
+int main(void)
 {
+	char c[] = "Holberton";
+	int i;
 
+	for (i = 0; i < 9; i++)
+	{
+		_putchar(c[i]);
+	}
+	_putchar('\n');
 	return (0);
 }
