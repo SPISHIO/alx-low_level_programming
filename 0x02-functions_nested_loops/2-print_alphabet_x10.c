@@ -1,21 +1,25 @@
 #include "holberton.h"
-
 /**
- * print_alphabet_x10 - Check holberton
- * Description: function uses _putchar function to print
- * alphabet in lowercase 10 times
- * Return: Nothing.
+ * print_alphabet_x10 - print the alphabet 10 times.
+ *
+ * Return: Always 0 (Success)
  */
-
 void print_alphabet_x10(void)
 {
-	char i;
-	int j;
+	int alpha;
+	int count;
 
-	for (j = 0; j < 10; j++)
+	count = 0;
+
+	while (count <= 9)
 	{
-		for (i = 'a'; i <= 'z'; i++)
-			_putchar(i);
+		alpha = 'a';
+		while (alpha <= 'z')
+		{
+			_putchar(alpha);
+			alpha++;
+		}
+		count++;
 		_putchar('\n');
 	}
 }
