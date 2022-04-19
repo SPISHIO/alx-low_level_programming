@@ -1,23 +1,17 @@
-/*
- * File: 6-print_line.c
- * Auth: Brennan D Baraban
- */
 
 #include "holberton.h"
-
 /**
- * print_line - Draws a straight line using the character _.
- * @n: The number of _ characters to be printed.
- */
+  * print_line - print  a line
+  * @n: numbers of straigh lines
+  * Return: Always 0.
+  */
 void print_line(int n)
 {
-	int len;
+	int l;
 
-	if (n > 0)
+	for (l = 1; l <= n; l++)
 	{
-		for (len = 0; len < n; len++)
-			_putchar('_');
+		_putchar(95);
 	}
-
 	_putchar('\n');
 }
