@@ -1,4 +1,3 @@
-
 #include "holberton.h"
 /**
   * _isupper - uppercase of a letter
@@ -7,7 +6,7 @@
   */
 int _isupper(int c)
 {
-	if (c == C)
+	if (c >= 65 && c <= 90)
 	{
 		return (1);
 	}
