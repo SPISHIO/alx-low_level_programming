@@ -1,29 +1,42 @@
-#include "holberton.h"
+int check_seperators(char c);
+
 /**
- * cap_string - capitalizes all words of a string..
- * @s: string to capitalize
- *
- * Return: Always 0.
+ * cap_string - a function that capitalizes all words of a string.
+ * @s: An input string to capitalize letters
+ * Return: pointer to s
  */
 char *cap_string(char *s)
 {
-int i;
-int j;
-char s2[] = {' ', 9, '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	int i = 0;
 
-if (s[0] <= 'z' && s[0] >= 'a')
-{
-s[0] = s[0] - 32;
+	while (s[i])
+	{
+		if (i == 0 && (s[i] >= 'a' && s[i] <= 'z'))
+			s[i] -= 32;
+
+		if (check_seperators(s[i]) && (s[i + 1] >= 'a' && s[i + 1] <= 'z'))
+			s[i + 1] -= 32;
+		i++;
+	}
+
+	return (s);
 }
-for (i = 1; s[i] != '\0'; i++)
+
+/**
+ * check_seperators - Separators of words: space, tabulation, new line,
+ * ,, ;, ., !, ?, ", (, ), {, and }
+ * @c: an input character
+ * Return: 1 if seperator, 0 otherwise
+ */
+int check_seperators(char c)
 {
-for (j = 0; s2[j] != '\0'; j++)
-{
-if (s[i] == s2[j] && s[i + 1] <= 'z' && s[i + 1] >= 'a' && s[i + 1] != 0)
-{
-s[i + 1] = s[i + 1] - 32;
-}
-}
-}
-return (s);
+	int i = 0;
+	char seperators[13] = { ' ', '\t', '\n', ',', ';', '.', '!', '?',
+		'"', '(', ')', '{', '}' };
+	for (; i < 13; i++)
+	{
+		if (c == seperators[i])
+			return (1);
+	}
+	return (0);
 }
