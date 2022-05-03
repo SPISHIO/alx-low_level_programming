@@ -1,20 +1,20 @@
 #include "holberton.h"
 
 /**
- * _memset - This is my function copy the number the character to S
- * @s: This is my entry and return
- * @b: This is the character to copy
- * @n: This is the number of Bytes
- *
- * Return: This is my result and Return S
+ * _memset - a function that fills memory with constant bytes
+ * @s: location to fill
+ * @b: char to fill location with
+ * @n: number of bytes to fill
+ * Return: returns pointer to location filled
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-unsigned int a;
+	char *start = s;
 
-for (a = 0; a < n ; a++)
-{
-s[a] = b;
-}
-return (s);
+	while (n--)
+	{
+		*s = b;
+		s++;
+	}
+	return (start);
 }

@@ -1,18 +1,15 @@
 #include "holberton.h"
 
 /**
- * _strlen - This function is equal to strlen
- *
- * @s: this is my entry
- *
- * Return: the las character
+ * _strlen -  a function that returns the length of a string.
+ * @s: An input string
+ * Return: Nothing
  */
 int _strlen(char *s)
 {
-int a;
+	int len = 0;
 
-for (a = 0; s[a] != '\0' ; a++)
-{
-}
-return (a);
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
